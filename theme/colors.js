@@ -1,5 +1,5 @@
 export default colors = {
-    PRIMARY: '#007FFF',
+    PRIMARY: '#2D2F46',
     INPUT_BG: '#0E0F11',
     WHITE: '#ffffff',
     BLACK: 'rgba(0,0,0,1)',

@@ -4,14 +4,10 @@ import {
   Text,
   View,
 } from 'react-native';
-import Icon from './component/Icon';
-import { colors, fonts } from './theme';
+import StackNavigtaion from './src/navigation/StackNavigation';
 function App() {
   return(
-    <View>
-      <Text style={{fontFamily:fonts.sfproBold , color:colors.INPUT_BG}}>Test</Text>
-      <Icon name="home" type="material" color={'green'}/>
-    </View>
+    <StackNavigtaion />
    );
 }
 
