@@ -12,7 +12,7 @@ import Icon from '../../../../component/Icon';
 import {colors, fonts} from '../../../../theme';
 import {useNavigation} from '@react-navigation/native';
 
-const Signin = () => {
+const Signup = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
@@ -30,10 +30,14 @@ const Signin = () => {
               fontFamily: fonts.sfproBold,
               fontSize: 30,
             }}>
-            Sign In
+            Sign Up
           </Text>
         </View>
         <View style={{width: '90%', alignSelf: 'center'}}>
+          <AppInput
+            placeholder={'User Name'}
+            inputContainer={{width: '100%', marginTop: 20}}
+          />
           <AppInput
             placeholder={'Email'}
             inputContainer={{width: '100%', marginTop: 20}}
@@ -43,20 +47,7 @@ const Signin = () => {
             inputContainer={{width: '100%', marginTop: 20}}
             isPass={true}
           />
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('ForgotPassword');
-            }}>
-            <Text style={{textAlign: 'right', color: '#9C9CA6'}}>
-              Forgot Password ?
-            </Text>
-          </TouchableOpacity>
-          <AppButton
-            title={'Sign In'}
-            onPress={() => {
-              navigation.navigate('Bottom');
-            }}
-          />
+          <AppButton title={'Sign Up'} />
 
           <View
             style={{
@@ -94,12 +85,9 @@ const Signin = () => {
             hasIcon={<Icon name="logo-facebook" type="ionicon" />}
           />
           <View style={{flexDirection: 'row', alignSelf: 'center'}}>
-            <Text style={{color: '#9C9CA6'}}>Don't Have An Account ?</Text>
-            <TouchableOpacity
-              onPress={() => {
-                navigation.navigate('Signup');
-              }}>
-              <Text style={{color: colors.WHITE}}> Signup here</Text>
+            <Text style={{color: '#9C9CA6'}}>Already Have An Account ?</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Signin')}>
+              <Text style={{color: colors.WHITE}}> SignIn here</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -115,4 +103,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Signin;
+export default Signup;
